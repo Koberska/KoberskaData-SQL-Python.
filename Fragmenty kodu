@@ -1,0 +1,27 @@
+import psycopg2
+
+connection = psycopg2.connect(
+    host='localhost',
+    user='postgres',
+    password='',
+    dbname='postgres',
+)
+
+cursor = connection.cursor()
+
+sql = "select buyprice from products"
+
+cursor.execute(sql)
+
+suma = 0
+for cena in cursor:
+    suma = suma + cena[0]
+print("suma: {}".format(suma))
+# print(f"suma: {suma}")
+
+rows_count = cursor.rowcount
+print("liczba wierszy: {}".format(rows_count))
+
+avg = suma / rows_count
+# print("średnia: {}".format(avg))
+print(f"średnia: {avg}")
