@@ -1,0 +1,25 @@
+import psycopg2
+import math
+
+connection = psycopg2.connect(
+    host='localhost',
+    user='postgres',
+    password='',
+    dbname='postgres',
+)
+
+cursor = connection.cursor()
+sql = "select msrp from products"
+cursor.execute(sql)
+
+price_min = math.inf
+price_max = 0
+
+for cena in cursor:
+    if cena[0] < price_min:
+        price_min = cena[0]
+    if cena[0] > price_max:
+        price_max = cena[0]
+
+# print("cena min: {},".format(price_min), "cena max: {}".format(price_max))
+print(f"cena min: {price_min}, cena max: {price_max}")
