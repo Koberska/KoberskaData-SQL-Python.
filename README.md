@@ -1,2 +1,2 @@
 # KoberskaData-SQL-Python.
-Średnia cena zakupu (buyPrice) produktu. 
+Jest to część projektu. Więcej informacji znajdziesz na Koberska.com
