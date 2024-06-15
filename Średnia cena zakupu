@@ -24,4 +24,4 @@ print("liczba wierszy: {}".format(rows_count))
 
 avg = suma / rows_count
 # print("średnia: {}".format(avg))
-print(f"średnia: {avg}")
+print(f"średnia: {avg}") 
